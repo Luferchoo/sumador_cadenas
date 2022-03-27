@@ -9,15 +9,27 @@ function sumar_solo_cadena(cadena){
 }
 
 function command_filter(comando){
-  return comando.slice(3,4);
+  var caracter
+  if(comando.slice(4,5) === "]" ){
+    caracter = comando.slice(3,4);
+  }
+  else{
+    var i = 5;
+    for (i; "]" !== comando.slice(i-1,i) ; i++) {
+      caracter = comando.slice(3,i);
+    }
+  }
+  var reg_ex = new RegExp(caracter,'g');
+  return reg_ex;
 }
 
 function sumar(comando){
   var total = 0;
   var array_comando = comando.split(" ");
-  //console.log(command_filter(array_comando[0]));
   if(array_comando.length === 2){
-    total = sumar_solo_cadena(array_comando[1].replace(command_filter(array_comando[0]),","));
+    var caracter = command_filter(array_comando[0]);
+    var cadena_replaced = array_comando[1].replace(caracter,",");
+    total = sumar_solo_cadena(cadena_replaced);
   }
   else if(array_comando.length === 1){
     total = sumar_solo_cadena(comando);

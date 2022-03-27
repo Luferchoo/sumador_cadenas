@@ -19,4 +19,7 @@ describe("Sumar Cadenas de Numeros", () => {
   it("RECONOCE UN SEPARADOR DETERMINADO POR EL USUARIO", () => {
     expect(sumar("//[;] 1,2;3-4")).toEqual(10);
   });
+  it("RECONOCE SEPARADORES MAYORES A UN CARACTER", () => {
+    expect(sumar("//[.-] 1.-2.-3.-4")).toEqual(10);
+  });
 });
