@@ -1,12 +1,9 @@
 function sumar(cadena){
   var total = 0;
   var array_num = cadena.split(",");
-  console.log(array_num.length);
-  if(array_num.length > 1){
-    total = total + Number(array_num[0]) + Number(array_num[1]);
-  }
-  else{
-    total = total + Number(cadena);
+  //console.log(array_num.length);
+  for (var i = 0; i < array_num.length; i++) {
+    total +=  Number(array_num[i]);
   }
   return total
 }
