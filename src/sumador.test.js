@@ -13,4 +13,7 @@ describe("Sumar Cadenas de Numeros", () => {
   it("TOMA EN CUENTA UNA CADENA CON VARIOS NÚMEROS", () => {
     expect(sumar("1,2,3,20,30")).toEqual(56);
   });
+  it("TOMA EN CUENTA UNA CADENA SEPARADA POR GUIONES", () => {
+    expect(sumar("1,2-3,4")).toEqual(10);
+  });
 });
