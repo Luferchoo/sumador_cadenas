@@ -25,4 +25,7 @@ describe("Sumar Cadenas de Numeros", () => {
   it("SE RECONOCE MÁS DE UN SEPARADOR BAJO EL MISMO FORMATO", () => {
     expect(sumar("//[*][$] 1$2*,3-4")).toEqual(10);
   });
+  it("SI UN NUMERO EN LA CADENA ES MAYOR A 1000 ES IGNORADO", () => {
+    expect(sumar("//[*][$][.] 1000*1001.1200-200$1")).toEqual(1201);
+  });
 });

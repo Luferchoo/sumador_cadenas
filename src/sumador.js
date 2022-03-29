@@ -1,8 +1,13 @@
 import Instruccion from "./instruccion";
-
+function menor_1000(numero){
+  return numero<=1000
+}
 function sumar_solo_cadena(cadena){
   var total = 0;
   var array_num = cadena.split(",");
+  console.log(array_num);
+  array_num = array_num.filter(menor_1000);
+  console.log(array_num);
   for (var i = 0; i < array_num.length; i++) {
     total +=  Number(array_num[i]);
   }
