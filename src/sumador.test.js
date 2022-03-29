@@ -22,4 +22,7 @@ describe("Sumar Cadenas de Numeros", () => {
   it("RECONOCE SEPARADORES MAYORES A UN CARACTER", () => {
     expect(sumar("//[.-] 1.-2.-3.-4")).toEqual(10);
   });
+  it("SE RECONOCE MÁS DE UN SEPARADOR BAJO EL MISMO FORMATO", () => {
+    expect(sumar("//[*][$] 1$2*,3-4")).toEqual(10);
+  });
 });
